@@ -10,6 +10,7 @@ import Foundation
 
 struct Movie {
     let id: Int
+    let belongs_to_collection: Any? // Currently all now_playing movies return nil for this field, so I am unable to progress here
     let poster_url: URL
     let title: String
     let overview: String
@@ -22,11 +23,13 @@ struct Movie {
         guard let poster_url = API.imageURL(poster_path) else { return nil }
         guard let overview = json["overview"] as? String else { return nil }
         guard let release_date_string = json["release_date"] as? String else { return nil }
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         guard let release_date = dateFormatter.date(from: release_date_string) else { return nil }
         
         self.id = id
+        self.belongs_to_collection = json["belongs_to_collection"]
         self.title = title
         self.poster_url = poster_url
         self.overview = overview

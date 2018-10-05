@@ -24,6 +24,10 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        API.getNowPlaying() { results in
+            self.objects = results
+            self.tableView.reloadData()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +83,7 @@ class MasterViewController: UITableViewController {
         // Asynchronous image loading
         //  - use cell.tag as a unique key to ensure the image matches the cell
         //  - not enought time to implement async image decompression via ImageIO
+        //  - better packaged as a UITableViewCell extension
         cell.tag = movie.id
         DispatchQueue.global(qos: .userInteractive).async { [id = movie.id, url = movie.poster_url] in
             guard let imageData = try? Data(contentsOf: url) else { return }
