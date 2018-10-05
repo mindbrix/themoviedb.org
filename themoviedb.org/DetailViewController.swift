@@ -10,15 +10,25 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var detailTitleLabel: UILabel!
+    @IBOutlet weak var detailOverviewLabel: UILabel!
+    @IBOutlet weak var detailDateLabel: UILabel!
     @IBOutlet weak var detailImage: UIImageView!
 
     func configureView() {
         // Update the user interface for the detail item.
         if let movie = detailItem {
-            if let label = detailDescriptionLabel {
+            if let label = detailTitleLabel {
                 label.text = movie.title
-                detailImage!.loadImageFrom(movie.poster_url, tag: movie.id) {}
+            }
+            if let label = detailOverviewLabel {
+                label.text = movie.overview
+            }
+            if let label = detailDateLabel {
+                label.text = DateFormatter.localizedString(from: movie.release_date, dateStyle:.medium, timeStyle:.none)
+            }
+            if let imageView = detailImage {
+                imageView.loadImageFrom(movie.poster_url, tag: movie.id) {}
             }
         }
     }

@@ -12,6 +12,7 @@ import UIKit
 // Asynchronous image loading
 //  - use view.tag as a unique key to ensure the loaded image matches the view after cell recycling
 //  - not enought time to implement async image decompression via ImageIO
+//  - could be expanded with placeholder images etc.
 extension UIImageView {
     func loadImageFrom(_ url: URL, tag: Int, completion: @escaping () -> Void) {
         self.tag = tag

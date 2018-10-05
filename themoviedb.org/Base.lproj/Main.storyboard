@@ -37,31 +37,55 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="INF-RX-uCg">
                                 <rect key="frame" x="20" y="84" width="335" height="563"/>
                             </imageView>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="323" width="335" height="20.5"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Title" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
+                                <rect key="frame" x="20" y="84" width="335.5" height="32"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.33450704225352113" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="mbP-wo-Mih"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Overview" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="OYS-im-N1r">
+                                <rect key="frame" x="20" y="124" width="335.5" height="19.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.3345070423" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Date" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="VgH-W6-mRq">
+                                <rect key="frame" x="167.5" y="606" width="40" height="21"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.3345070423" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="INF-RX-uCg" secondAttribute="bottom" constant="20" id="AfH-Ca-79B"/>
+                            <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="INF-RX-uCg" secondAttribute="top" id="BbZ-fr-Bfb"/>
                             <constraint firstItem="INF-RX-uCg" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="Ei1-R5-ER8"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
+                            <constraint firstItem="VgH-W6-mRq" firstAttribute="bottom" secondItem="INF-RX-uCg" secondAttribute="bottom" constant="-20" id="Ele-dQ-942"/>
+                            <constraint firstItem="OYS-im-N1r" firstAttribute="trailing" secondItem="INF-RX-uCg" secondAttribute="trailing" id="LZx-oE-Qv3"/>
+                            <constraint firstItem="OYS-im-N1r" firstAttribute="top" secondItem="0XM-y9-sOw" secondAttribute="bottom" constant="8" symbolic="YES" id="Ngb-kH-LNr"/>
+                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="INF-RX-uCg" secondAttribute="leading" id="PsC-t3-sEl"/>
                             <constraint firstItem="INF-RX-uCg" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="20" id="VKS-ro-EDS"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
+                            <constraint firstItem="VgH-W6-mRq" firstAttribute="centerX" secondItem="INF-RX-uCg" secondAttribute="centerX" id="Y38-IS-T3w"/>
+                            <constraint firstItem="VgH-W6-mRq" firstAttribute="centerX" secondItem="0XM-y9-sOw" secondAttribute="centerX" id="fyD-Ds-R9h"/>
+                            <constraint firstItem="OYS-im-N1r" firstAttribute="leading" secondItem="INF-RX-uCg" secondAttribute="leading" id="mmT-Mm-OL6"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="INF-RX-uCg" secondAttribute="trailing" constant="20" id="rg7-9f-Kls"/>
-                            <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="detailDateLabel" destination="VgH-W6-mRq" id="tjH-cx-TsL"/>
                         <outlet property="detailImage" destination="INF-RX-uCg" id="bu8-jc-fbF"/>
+                        <outlet property="detailOverviewLabel" destination="OYS-im-N1r" id="CPw-7Z-fdS"/>
+                        <outlet property="detailTitleLabel" destination="0XM-y9-sOw" id="B8F-sc-kIS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
