@@ -26,6 +26,11 @@ class themoviedb_orgTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
+    func testNowPlaying() {
+        API.searchNowPlaying() { results in
+            XCTAssert(results.count != 0)
+        }
+    }
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
