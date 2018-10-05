@@ -10,7 +10,7 @@ import Foundation
 
 struct Movie {
     let id: Int
-    let poster_path: URL
+    let poster_url: URL
     let title: String
     let overview: String
     let release_date: Date
@@ -18,7 +18,8 @@ struct Movie {
     init?(json: [String: Any]) {
         guard let id = json["id"] as? Int else { return nil }
         guard let title = json["title"] as? String else { return nil }
-        guard let poster_path = URL(string:"localhost:") else { return nil }
+        guard let poster_path = json["poster_path"] as? String else { return nil }
+        guard let poster_url = API.imageURL(poster_path) else { return nil }
         guard let overview = json["overview"] as? String else { return nil }
         guard let release_date_string = json["release_date"] as? String else { return nil }
         let dateFormatter = DateFormatter()
@@ -27,7 +28,7 @@ struct Movie {
         
         self.id = id
         self.title = title
-        self.poster_path = poster_path
+        self.poster_url = poster_url
         self.overview = overview
         self.release_date = release_date
     }

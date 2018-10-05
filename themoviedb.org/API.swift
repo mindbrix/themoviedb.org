@@ -9,10 +9,21 @@
 import Foundation
 
 struct API {
+    // No concerns about sharing this
     static let api_key = "e3efd8f6c608c73380b1e2d127fa78b5"
     
+    // Hard-coded due to time. Should GET from /configuration
+    static let image_base_url = "https://image.tmdb.org/t/p/w154"
+    
+    static let base_url = "https://api.themoviedb.org/3"
+    
+    // Concentrate all URL creation in one locations
+    static func imageURL(_ path: String) -> URL? {
+        return URL(string:image_base_url + path)
+    }
+    
     static func getDetails(id: Int, completion: @escaping ([Movie]) -> Void) {
-        if let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)?api_key=\(api_key)&language=en-US&page=1") {
+        if let url = URL(string: base_url + "/\(id)?api_key=\(api_key)&language=en-US&page=1") {
             URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, _ in
                 var results: [Movie] = []
                 if let data = data {
@@ -30,7 +41,7 @@ struct API {
     }
     
     static func getNowPlaying(completion: @escaping ([Movie]) -> Void) {
-        if let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(api_key)&language=en-US&page=1") {
+        if let url = URL(string: base_url + "/movie/now_playing?api_key=\(api_key)&language=en-US&page=1") {
             URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, _ in
                 var results: [Movie] = []
                 if let data = data {
