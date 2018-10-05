@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
@@ -80,19 +81,8 @@ class MasterViewController: UITableViewController {
         let movie = objects[indexPath.row]
         cell.textLabel!.text = movie.title
     
-        // Asynchronous image loading
-        //  - use cell.tag as a unique key to ensure the image matches the cell
-        //  - not enought time to implement async image decompression via ImageIO
-        //  - better packaged as a UITableViewCell extension
-        cell.tag = movie.id
-        DispatchQueue.global(qos: .userInteractive).async { [id = movie.id, url = movie.poster_url] in
-            guard let imageData = try? Data(contentsOf: url) else { return }
-            DispatchQueue.main.async {
-                if (cell.tag == id) {
-                    cell.imageView!.image = UIImage(data: imageData)
-                    cell.setNeedsLayout()
-                }
-            }
+        cell.imageView!.loadImageFrom(movie.poster_url, tag: movie.id) {
+            cell.setNeedsLayout()
         }
         return cell
     }

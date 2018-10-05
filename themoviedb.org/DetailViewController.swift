@@ -11,13 +11,14 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-
+    @IBOutlet weak var detailImage: UIImageView!
 
     func configureView() {
         // Update the user interface for the detail item.
         if let movie = detailItem {
             if let label = detailDescriptionLabel {
                 label.text = movie.title
+                detailImage!.loadImageFrom(movie.poster_url, tag: movie.id) {}
             }
         }
     }

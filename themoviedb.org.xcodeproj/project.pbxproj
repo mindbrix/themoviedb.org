@@ -17,6 +17,7 @@
 		E99EA7A721677ABC00288238 /* themoviedb_orgUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EA7A621677ABC00288238 /* themoviedb_orgUITests.swift */; };
 		E99EA7B521677F4D00288238 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EA7B421677F4D00288238 /* Movie.swift */; };
 		E99EA7F52167847F00288238 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EA7F42167847F00288238 /* API.swift */; };
+		E99EA7F72167C23400288238 /* UIImageView+loadImageFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99EA7F62167C23400288238 /* UIImageView+loadImageFrom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E99EA7A821677ABC00288238 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E99EA7B421677F4D00288238 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E99EA7F42167847F00288238 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E99EA7F62167C23400288238 /* UIImageView+loadImageFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImageFrom.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				E99EA78421677ABB00288238 /* AppDelegate.swift */,
+				E99EA7F62167C23400288238 /* UIImageView+loadImageFrom.swift */,
 				E99EA7F42167847F00288238 /* API.swift */,
 				E99EA7B421677F4D00288238 /* Movie.swift */,
 				E99EA78621677ABB00288238 /* MasterViewController.swift */,
@@ -269,6 +272,7 @@
 				E99EA78721677ABB00288238 /* MasterViewController.swift in Sources */,
 				E99EA7B521677F4D00288238 /* Movie.swift in Sources */,
 				E99EA78521677ABB00288238 /* AppDelegate.swift in Sources */,
+				E99EA7F72167C23400288238 /* UIImageView+loadImageFrom.swift in Sources */,
 				E99EA7F52167847F00288238 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
