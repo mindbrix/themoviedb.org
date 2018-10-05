@@ -8,7 +8,11 @@
 
 import UIKit
 
+// Following the vanilla MVC template as a starting point
+//  - subsequent iterations can refine the model to balance out complexity
 
+// Starting with a plain old UITableView to concentrate on the network/model layers first
+//  - technically, a table view is a single-column grid
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
@@ -46,9 +50,6 @@ class MasterViewController: UITableViewController {
         API.getNowPlaying() { results in
             self.objects = results
             self.tableView.reloadData()
-            
-            API.getDetails(id: results[0].id) { details in
-            }
         }
     }
 

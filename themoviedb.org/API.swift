@@ -18,12 +18,12 @@ struct API {
     static let base_url = "https://api.themoviedb.org/3"
     
     // Concentrate all URL creation in one location
+    // Could extend URL to provide these once a clear pattern to the API is understood
     static func imageURL(_ path: String) -> URL? {
         return URL(string:image_base_url + path)
     }
     
     static func getDetails(id: Int, completion: @escaping ([Movie]) -> Void) {
-        // Could extend URL to provide these once a clear pattern to the API is understood
         if let url = URL(string: base_url + "/\(id)?api_key=\(api_key)&language=en-US&page=1") {
             URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, _ in
                 var results: [Movie] = []
